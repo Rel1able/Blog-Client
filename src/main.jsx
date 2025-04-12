@@ -4,6 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import SignUp from "./components/SignUp.jsx";
+import Login from "./components/Login.jsx";
+import Posts from "./components/Posts.jsx";
+import SinglePost from "./components/SinglePost.jsx";
+import Comments from "./components/Comments.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +15,23 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "sign-up",
+    path: "/sign-up",
     element: <SignUp/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/posts",
+    element: <Posts/>
+  },
+  {
+    path: "/posts/:id",
+    element: <SinglePost/>,
+    children: [
+      {path: "comments", element: <Comments/>}
+    ]
   }
   
 ])
