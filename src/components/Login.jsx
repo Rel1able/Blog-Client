@@ -15,10 +15,10 @@ export default function Login() {
             body: JSON.stringify({username, password})
         })
         const data = await response.json();
-        const token = data[token];
-        localStorage.setItem("token",token)
+        const token = data.token;
+        localStorage.setItem("token", token)
         console.log(data);
-        navigate("/");
+        navigate("/posts");
     }
 
     return (
