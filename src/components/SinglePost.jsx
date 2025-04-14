@@ -8,6 +8,7 @@ export default function SinglePost() {
     const [post, setPost] = useState([]);
     const [comments, setComments] = useState([]);
     const [token, setToken] = useState("");
+    const [user, setUser] = useState("");
     async function getComments() {
             const response = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}/comments`);
             const commentsData = await response.json();
@@ -30,13 +31,20 @@ export default function SinglePost() {
 
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
+        const storedUser = JSON.parse(localStorage.getItem("user"));
         if (storedToken) {
             setToken(storedToken);
             console.log("Your token is", storedToken)
         }
+        if (storedUser) {
+            setUser(storedUser);
+            console.log("User is ", storedUser)
+        }
+        
     }, [])
     return (
         <>
+            <h1>{user.username}</h1>
             <h1>Target post</h1>
             <h1>{post.title}</h1>
             <h2>{post.text}</h2>
