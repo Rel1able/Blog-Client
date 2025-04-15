@@ -1,12 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
+import Auth from "./AuthContext";
+import { useContext } from "react";
 
 
-export default function Header({ user }) {
+export default function Header() {
     const navigate = useNavigate();
-    
+    const {user, setUser} = useContext(Auth.Context);
     function handleLogout() {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
+        setUser(null);
         navigate("/");
     }
     return (
