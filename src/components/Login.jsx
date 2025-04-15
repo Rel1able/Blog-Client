@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Auth from "./AuthContext";
 export default function Login() {
+    const {user} = useContext(Auth.Context)
     let navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -26,6 +29,7 @@ export default function Login() {
 
     return (
         <>
+            <Header user={user} />
             <h2>Log in</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>

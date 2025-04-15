@@ -7,7 +7,7 @@ import SignUp from "./components/SignUp.jsx";
 import Login from "./components/Login.jsx";
 import Posts from "./components/Posts.jsx";
 import SinglePost from "./components/SinglePost.jsx";
-
+import Auth from './components/AuthContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <Auth.Provider>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </Auth.Provider>,
 )

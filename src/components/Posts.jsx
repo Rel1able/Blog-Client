@@ -1,8 +1,11 @@
-
-import { useState, useEffect } from "react";
+import {Link} from "react-router-dom"
+import { useState, useEffect, useContext } from "react";
+import Auth from "./AuthContext";
+import Header from "./Header";
 
 export default function Posts() {
     const [posts, setPosts] = useState([]);
+    const {user} = useContext(Auth.Context)
     
     useEffect(() => {
         async function getPosts() {
@@ -15,11 +18,12 @@ export default function Posts() {
     }, [])
     return (
         <>
+            <Header user={user}/>
              <h1>Posts</h1>
         <ul>
             {posts.map((post, id) => (
                 <li key={id}>
-                    <h3>{post.title}</h3>
+                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
                 </li>
             ))}
         </ul>
