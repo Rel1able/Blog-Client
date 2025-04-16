@@ -13,7 +13,7 @@ export default function Header() {
         navigate("/");
     }
     return (
-        <div class={styles.container}>
+        <div className={styles.container}>
             <Link to="/">Blog</Link>
             <Link to="/posts">Posts</Link>
             {user ? <button onClick={handleLogout}>Log out</button> : 

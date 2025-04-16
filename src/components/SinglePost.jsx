@@ -1,47 +1,21 @@
-import { useParams} from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, useLoaderData} from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import CreateComment from "./CreateComment";
 import Header from "./Header";
+import Auth from "./AuthContext";
 
 export default function SinglePost() {
     const postId = useParams();
-
-    const [post, setPost] = useState([]);
+    const post = useLoaderData();
     const [comments, setComments] = useState([]);
-    const [token, setToken] = useState("");
-    const [user, setUser] = useState("");
+    const { user,  token} = useContext(Auth.Context);
     async function getComments() {
             const response = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}/comments`);
             const commentsData = await response.json();
-            console.log("Comments",commentsData);
             setComments(commentsData);
         }
-        
-    
-
     useEffect(() => {
-        async function getPost() {
-            const response = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}`)
-            const postData = await response.json();
-            console.log("Post data", postData);
-            setPost(postData);
-        }
-        getPost();
         getComments()
-    }, [])
-
-    useEffect(() => {
-        const storedToken = localStorage.getItem("token");
-        const storedUser = JSON.parse(localStorage.getItem("user"));
-        if (storedToken) {
-            setToken(storedToken);
-            console.log("Your token is", storedToken)
-        }
-        if (storedUser) {
-            setUser(storedUser);
-            console.log("User is ", storedUser)
-        }
-        
     }, [])
     return (
         <>

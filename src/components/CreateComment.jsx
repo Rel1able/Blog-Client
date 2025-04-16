@@ -21,6 +21,7 @@ export default function CreateComment({token, getComments}) {
         const response = await request.json();
         console.log(response);
         getComments();
+        setComment("");
 
     }
 
