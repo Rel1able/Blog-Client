@@ -1,0 +1,29 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    list-style-type: none;
+    gap: 2rem;
+}
+.postCard{
+    border: 2px solid rgb(212, 210, 210);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    height: 200px;
+}
+
+
+.postCard a, .postCard p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title{
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.description {
+    color: black;
+}

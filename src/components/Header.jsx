@@ -14,13 +14,16 @@ export default function Header() {
     }
     return (
         <div className={styles.container}>
-            <Link className={styles.title} to="/">Blog</Link>
-            <Link className={styles.button} to="/posts">Posts</Link>
-            {user ? <button className={styles.button} onClick={handleLogout}>Log out</button> : 
-                <>
-                    <Link className={styles.button} to="/login">Log in</Link>
+            <div className={styles.blog}>
+                <Link className={styles.title} to="/">Blog</Link>
+                <Link className={styles.button} to="/posts">Posts</Link>
+            </div>
+           
+            {user ? <button className={styles.signUpBtn} onClick={handleLogout}>Log out</button> : 
+                <div className={styles.buttons}>
+                    <Link className={styles.signUpBtn} to="/login">Log in</Link>
                     <Link className={styles.signUpBtn} to="/sign-up">Sign up</Link>
-                </>
+                </div>
 
             }
             

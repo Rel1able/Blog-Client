@@ -26,6 +26,10 @@
     border-radius: 1rem;
     padding: 0.2rem;
 }
+.labelInputContainer input:focus{
+    outline: none;
+}
+
 
 
 .btn{
@@ -51,10 +55,11 @@
 
 .title{
     font-size: 2rem;
-    color: var(--main-color);
+
 }
 
 .login{
     font-size: 1.2rem;
     color: var(--main-color);
 }
+

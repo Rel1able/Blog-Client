@@ -15,7 +15,8 @@ function App() {
         :
         <>
           
-      <h2><Link to="/sign-up">Sign up</Link> if you want to be able to leave comments to the posts</h2>
+          <h2 className="home-title">Hello and welcome to my personal blog</h2>
+          <h3 className="posts"><Link class="link" to="/posts">Explore all posts</Link></h3>
         </>
       }
     </>

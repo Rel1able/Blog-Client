@@ -1,6 +1,6 @@
 import { useState} from "react";
 import { useParams } from "react-router-dom";
-
+import styles from "../styles/singlepost.module.css";
 export default function CreateComment({token, getComments}) {
 
     const postId = useParams();
@@ -26,10 +26,10 @@ export default function CreateComment({token, getComments}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="comment">Enter your comment</label>
-            <input type="text" value={comment} onChange={e => setComment(e.target.value)}/>
-            <button type="submit">Add</button>
+            <textarea className={styles.commentArea} value={comment} cols="30" rows="5" onChange={e => setComment(e.target.value)}></textarea>
+            <button className={styles.btn} type="submit">Add</button>
         </form>
     )
 }
