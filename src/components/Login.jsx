@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Auth from "./AuthContext";
+import styles from "../styles/signup.module.css";
 
 export default function Login() {
 
@@ -32,15 +33,23 @@ export default function Login() {
 
     return (
         <>
-            <Header/>
-            <h2>Log in</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <input type="text" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <button type="submit">Log in</button>
-            </form>
+            <Header />
+            <div className={styles.container}>
+                <h2 className={styles.title}>Log in</h2>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <div className={styles.labelInputContainer}>
+                         <label htmlFor="username">Username:</label>
+                        <input type="text" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+                    </div>
+                    <div className={styles.labelInputContainer}>
+                        <label htmlFor="password">Password:</label>
+                        <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                        
+                        <button className={styles.btn} type="submit">Log in</button>
+                    </form>
+            </div>
+            
         </>
         
     )

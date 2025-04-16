@@ -1,6 +1,7 @@
 import { useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Header from "./Header";
+import styles from "../styles/signup.module.css";
 
 export default function SignUp() {
 
@@ -23,15 +24,27 @@ export default function SignUp() {
 
     return (
         <>
-            <Header/>
-            <h2>Sign up here</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <input type="text" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <button type="submit">Sign Up</button>
-            </form>
+            <Header />
+            <div className={styles.container}>
+                <h2 class={styles.title}>Sign up here</h2>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <div className={styles.labelInputContainer}>
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+                    </div>
+                    <div className={styles.labelInputContainer}>
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    <div className={styles.labelInputContainer}>
+                        <label htmlFor="confPassword">Confirm Password</label>
+                        <input type="password" id="confPassword" name="confPassword" value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    <p>Already have an account? <Link className={styles.login} to="/login">Log in</Link></p>
+                    <button className={styles.btn} type="submit">Sign Up</button>
+                </form>
+            </div>
+            
         </>
         
     )

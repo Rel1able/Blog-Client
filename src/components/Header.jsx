@@ -14,12 +14,12 @@ export default function Header() {
     }
     return (
         <div className={styles.container}>
-            <Link to="/">Blog</Link>
-            <Link to="/posts">Posts</Link>
-            {user ? <button onClick={handleLogout}>Log out</button> : 
+            <Link className={styles.title} to="/">Blog</Link>
+            <Link className={styles.button} to="/posts">Posts</Link>
+            {user ? <button className={styles.button} onClick={handleLogout}>Log out</button> : 
                 <>
-                    <Link to="/login">Log in</Link>
-                    <Link to="/sign-up">Sign-up</Link>
+                    <Link className={styles.button} to="/login">Log in</Link>
+                    <Link className={styles.signUpBtn} to="/sign-up">Sign up</Link>
                 </>
 
             }

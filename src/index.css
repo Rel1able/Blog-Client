@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: serif, Helvetica, sans-serif;
+}
+
+:root{
+    --main-color: rgb(14, 90, 230);
 }
 
 body{
@@ -9,3 +14,4 @@ body{
     margin: 0;
     padding: 0;
 }
+
