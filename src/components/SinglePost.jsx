@@ -1,4 +1,4 @@
-import { useParams, useLoaderData} from "react-router-dom";
+import { useParams, useLoaderData, Link} from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import CreateComment from "./CreateComment";
 import Header from "./Header";
@@ -19,8 +19,8 @@ export default function SinglePost() {
     }, [])
     return (
         <>
-            <Header/>
-            <h1>{user.username}</h1>
+            <Header />
+            {user && <h1>{user.username}</h1>}
             <h1>Target post</h1>
             <h1>{post.title}</h1>
             <h2>{post.text}</h2>
@@ -32,7 +32,8 @@ export default function SinglePost() {
                     </li>
                 ))}
             </ul>
-            {user ?  <CreateComment token={token} getComments={getComments} /> : null}
+            {user ? <CreateComment token={token} getComments={getComments} /> : 
+            <h1>Want to write comments? <Link to="/login">Login</Link></h1>}
            
         </>
 
