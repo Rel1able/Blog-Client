@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Auth from "./AuthContext";
 import { useContext } from "react";
-
+import styles from  "../styles/header.module.css"
 
 export default function Header() {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function Header() {
         navigate("/");
     }
     return (
-        <>
+        <div class={styles.container}>
             <Link to="/">Blog</Link>
             <Link to="/posts">Posts</Link>
             {user ? <button onClick={handleLogout}>Log out</button> : 
@@ -25,7 +25,7 @@ export default function Header() {
             }
             
             
-        </>
+        </div>
     )
 
 
