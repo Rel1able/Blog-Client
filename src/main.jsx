@@ -9,6 +9,13 @@ import Posts from "./components/Posts.jsx";
 import SinglePost from "./components/SinglePost.jsx";
 import Auth from './components/AuthContext.jsx'
 
+async function PostsLoader() {
+            const posts = await fetch("https://blog-api-rrvr.onrender.com/posts");
+            const data = await posts.json();
+            console.log(data);
+            return data
+        }
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +31,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/posts",
-    element: <Posts/>
+    element: <Posts />,
+    loader: PostsLoader
   },
   {
     path: "/posts/:id",
