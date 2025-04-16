@@ -5,7 +5,6 @@ import Auth from "./components/AuthContext";
 
 function App() {
   const { user } = useContext(Auth.Context);
-  console.log(user);
   return (
     <>
       <Header />
@@ -19,8 +18,6 @@ function App() {
       <h2><Link to="/sign-up">Sign up</Link> if you want to be able to leave comments to the posts</h2>
         </>
       }
-     
-      
     </>
   )
 }

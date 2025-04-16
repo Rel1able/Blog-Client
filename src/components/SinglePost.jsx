@@ -58,7 +58,8 @@ export default function SinglePost() {
                     </li>
                 ))}
             </ul>
-            <CreateComment token={token} getComments={getComments} />
+            {user ?  <CreateComment token={token} getComments={getComments} /> : null}
+           
         </>
 
     )
