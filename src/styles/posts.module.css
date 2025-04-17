@@ -9,7 +9,7 @@
     padding: 2rem;
     text-align: center;
     border-radius: 2rem;
-    height: 200px;
+    height: 210px;
 }
 
 
@@ -26,4 +26,8 @@
 
 .description {
     color: black;
+}
+
+.postAuthor{
+    color: var(--main-color);
 }

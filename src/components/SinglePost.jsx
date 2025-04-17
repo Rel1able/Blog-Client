@@ -31,7 +31,7 @@ export default function SinglePost() {
                 <ul className={styles.comments}>
                     {comments.map((comment, id) => (
                         <li className={styles.comment} key={id}>
-                            <h4>{comment.userId}</h4>
+                            <h4>{comment.user.username}</h4>
                             <p>{comment.text}</p>
                             
                         </li>

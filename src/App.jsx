@@ -16,7 +16,7 @@ function App() {
         <>
           
           <h2 className="home-title">Hello and welcome to my personal blog</h2>
-          <h3 className="posts"><Link class="link" to="/posts">Explore all posts</Link></h3>
+          <h3 className="posts"><Link className="link" to="/posts">Explore all posts</Link></h3>
         </>
       }
     </>

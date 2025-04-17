@@ -26,7 +26,7 @@ export default function SignUp() {
         <>
             <Header />
             <div className={styles.container}>
-                <h2 class={styles.title}>Sign up here</h2>
+                <h2 className={styles.title}>Sign up here</h2>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.labelInputContainer}>
                         <label htmlFor="username">Username</label>

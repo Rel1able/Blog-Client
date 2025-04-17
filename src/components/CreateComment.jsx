@@ -9,6 +9,7 @@ export default function CreateComment({token, getComments}) {
     const [comment, setComment] = useState("");
 
     async function handleSubmit(e) {
+        console.log(token);
         e.preventDefault();
         const request = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}/comments`, {
             method: "POST",
