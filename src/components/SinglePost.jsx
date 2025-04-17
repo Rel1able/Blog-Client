@@ -15,7 +15,10 @@ export default function SinglePost() {
         const commentsData = await response.json();
         console.log(commentsData)
             setComments(commentsData);
-        }
+    }
+    function convertDate(date) {
+        return new Date(date).toLocaleDateString().split("/").join(".");
+    }
     useEffect(() => {
         getComments()
     }, [])
@@ -33,7 +36,7 @@ export default function SinglePost() {
                         <li className={styles.comment} key={id}>
                             <h4>{comment.user.username}</h4>
                             <p>{comment.text}</p>
-                            
+                            <p className={styles.date}>{convertDate(comment.createdAt)}</p>
                         </li>
                     ))}
                 </ul>

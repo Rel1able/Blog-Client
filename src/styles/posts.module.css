@@ -9,14 +9,21 @@
     padding: 2rem;
     text-align: center;
     border-radius: 2rem;
-    height: 210px;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
 .postCard a, .postCard p{
     overflow: hidden;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
+
 }
 
 .title{
@@ -29,5 +36,9 @@
 }
 
 .postAuthor{
+    color: var(--main-color);
+}
+
+.postDate{
     color: var(--main-color);
 }
