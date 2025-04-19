@@ -9,8 +9,8 @@ function App() {
     <>
       <Header />
       {user ? <>
-        <h1>Explore all the <Link to="/posts">Posts</Link></h1>
-        <h1>Welcome to my personal Blog {user.username}</h1>
+        <h1 className="home-title">Explore all the <Link className="link" to="/posts">Posts</Link></h1>
+        <h1 className="posts">Welcome to my personal Blog {user.username}</h1>
       </> 
         :
         <>

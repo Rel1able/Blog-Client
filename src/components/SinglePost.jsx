@@ -11,10 +11,9 @@ export default function SinglePost() {
     const [comments, setComments] = useState([]);
     const { user,  token} = useContext(Auth.Context);
     async function getComments() {
-            const response = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}/comments`);
+        const response = await fetch(`https://blog-api-rrvr.onrender.com/posts/${postId.id}/comments`);
         const commentsData = await response.json();
-        console.log(commentsData)
-            setComments(commentsData);
+        setComments(commentsData);
     }
     function convertDate(date) {
         return new Date(date).toLocaleDateString().split("/").join(".");

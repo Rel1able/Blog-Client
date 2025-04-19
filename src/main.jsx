@@ -10,7 +10,7 @@ import SinglePost from "./components/SinglePost.jsx";
 import Auth from './components/AuthContext.jsx'
 
 async function postsLoader() {
-            const posts = await fetch("https://blog-api-rrvr.onrender.com/posts");
+            const posts = await fetch("https://blog-api-rrvr.onrender.com/posts/published");
             const data = await posts.json();
             console.log(data);
             return data

@@ -26,8 +26,6 @@ export default function Login() {
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user));
         setUser(user);
-        console.log("Token is", token, "user is", user)
-        console.log(data);
         navigate("/posts");
     }
 
